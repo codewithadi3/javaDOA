@@ -25,6 +25,8 @@ public class Restarauntdaoimpl implements Restarauntdao {
      private static final String INSERT_RES = "insert into restaraunt(restaraunt_id,restaraunt_name,restaraunt_address,restaraunt_active) values(?,?,?,?)";
      private static final String GET_ALL_RES = "select * from restaraunt";
      private static final String GET_RES_BY_ID = "select * from restaraunt where restaraunt_id= ?";
+     private static final String DELETE_RES_BY_ID = "delete from restaraunt where restaraunt_id= ?";
+     private static final String UPDATE_RES_BY_ID = "update restaraunt set restaraunt_active = ? where restaraunt_id= ?";
     
 
 
@@ -45,7 +47,7 @@ public class Restarauntdaoimpl implements Restarauntdao {
                 pstmt.setString(2,res.getRestaraunt_name());
                 pstmt.setString(3,res.getRestaraunt_address());
                 pstmt.setBoolean(4,res.isRestaraunt_active());
-                x=pstmt.executeUpdate();
+               int x=pstmt.executeUpdate();
        }
        catch(Exception e){
 
@@ -87,7 +89,10 @@ public class Restarauntdaoimpl implements Restarauntdao {
     @Override
     public int deleteResById(int id) {
         try{
-
+                pstmt = con.prepareStatement(DELETE_RES_BY_ID);
+                pstmt.setInt(1,id);
+                x = pstmt.executeUpdate();
+              
         }
         catch(Exception e){
  
@@ -98,10 +103,14 @@ public class Restarauntdaoimpl implements Restarauntdao {
     @Override
     public int updateResById(int id, boolean isActive) {
         try{
+            pstmt = con.prepareStatement(UPDATE_RES_BY_ID);
+            pstmt.setInt(2,id);
+            pstmt.setBoolean(1,isActive);
+            x =pstmt.executeUpdate();
 
         }
         catch(Exception e){
- 
+            e.printStackTrace();
         }
         return x;
     }

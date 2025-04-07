@@ -53,14 +53,13 @@ public static void main(String[] args) {
     //    }
 
     Restarauntdao rdao = new Restarauntdaoimpl();
-    // Restaraunt res1 = rdao.getResById(2);
-    // System.out.println(res1);
+     // Restaraunt res1 = rdao.getResById(2);
+     // System.out.println(res1);
 
-    
+    // int status = rdao.deleteResById(2);
+    // System.out.println(status + " rows got deleted");
 
-
-
-
-
+int status = rdao.updateResById(2,true);
+System.out.println(status +" rows has been updated");
 }
 }

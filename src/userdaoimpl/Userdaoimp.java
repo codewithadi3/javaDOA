@@ -113,7 +113,7 @@ public class Userdaoimp implements Userdao{
             pstmt = con.prepareStatement(UPDATE_USER_BY_ID);
             pstmt.setInt(2,id);
             pstmt.setString(1,address);
-            int  x =pstmt.executeUpdate();
+            int  x = pstmt.executeUpdate();
 
 
             
