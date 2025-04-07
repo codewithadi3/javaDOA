@@ -13,16 +13,22 @@ import model.User;
 import useraod.Userdao;
 
 public class Userdaoimp implements Userdao{
+<<<<<<< HEAD
     int x =-1;
+=======
+>>>>>>> 92efae40d7ccc116fa05bc669084ac940765a1da
     User user;
     static Connection con;
     ArrayList<User> userlist = new ArrayList<User>();
    private static final String INSERT_USER = "insert into user(username,password,email,address,role) values(?,?,?,?,?)";
    private static final String GET_ALL_USERS = "select * from user";
    private static final String GET_USER_BY_ID = " select * from user where user_id = ?";
+<<<<<<< HEAD
    private static final String DELETE_USER_BY_ID = " DELETE from user where user_id = ?";
    private static final String UPDATE_USER_BY_ID = " update user set address = ? where user_id = ?";
 
+=======
+>>>>>>> 92efae40d7ccc116fa05bc669084ac940765a1da
 
     private PreparedStatement pstmt;
     private Statement stmt;
@@ -41,6 +47,7 @@ public class Userdaoimp implements Userdao{
 
     @Override
     public int deleteById(int id) {
+<<<<<<< HEAD
         try{
             pstmt = con.prepareStatement(DELETE_USER_BY_ID);
             pstmt.setInt(1,id);
@@ -52,6 +59,10 @@ public class Userdaoimp implements Userdao{
         e.printStackTrace();
        }
         return x;
+=======
+        // TODO Auto-generated method stub
+        return 0;
+>>>>>>> 92efae40d7ccc116fa05bc669084ac940765a1da
     }
 
     @Override
@@ -106,21 +117,30 @@ public class Userdaoimp implements Userdao{
     @Override
     public int updateUserById(int id, String address) {
         try{
+<<<<<<< HEAD
             pstmt = con.prepareStatement(UPDATE_USER_BY_ID);
             pstmt.setInt(2,id);
             pstmt.setString(1,address);
             int  x =pstmt.executeUpdate();
 
+=======
+            
+>>>>>>> 92efae40d7ccc116fa05bc669084ac940765a1da
             
         }
         catch(Exception e){
          e.printStackTrace();
         }
+<<<<<<< HEAD
         return x;
     }
 
 
 
+=======
+        return 0;
+    }
+>>>>>>> 92efae40d7ccc116fa05bc669084ac940765a1da
     List<User> extractUserDatafromResultSet(ResultSet res){
         try{
             while(res.next()){
