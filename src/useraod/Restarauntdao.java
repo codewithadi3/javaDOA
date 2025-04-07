@@ -5,10 +5,10 @@ import java.util.*;
 import model.Restaraunt;
 
 public interface Restarauntdao {
-int insertRestaraunt(Restaraunt res);
-List<Restaraunt> getAllres();
-Restaraunt getResById(int id);
-int deleteResById(int id);
-int updateResById(int id,boolean isActive);
+int insertRestaraunt(Restaraunt res);    //done
+List<Restaraunt> getAllres();            //done
+Restaraunt getResById(int id);              //inprogress
+int deleteResById(int id);                  //inprogress
+int updateResById(int id,boolean isActive);     //inprogress
 
 }

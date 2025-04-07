@@ -36,9 +36,31 @@ public static void main(String[] args) {
     // User user = udao.getUserById(1);
     // System.out.println(user);
 
-    Restaraunt res = new Restaraunt(1,"telugu inti ruchulu","amlapuram",true);
+    // Restaraunt res = new Restaraunt(1,"telugu inti ruchulu","amlapuram",true);
+    // Restarauntdao rdao = new Restarauntdaoimpl();
+    // int status = rdao.insertRestaraunt(res);
+    // System.out.println(status+" rows updated succssfully");
+
+    // Restaraunt res = new Restaraunt(2,"tamil veedu sambar","chennai",false);
+    // Restarauntdao rdao = new Restarauntdaoimpl();
+    // int status = rdao.insertRestaraunt(res);
+    // System.out.println(status+" rows updated succssfully");
+
+
+    // ArrayList<Restaraunt> reslist= (ArrayList<Restaraunt>) rdao.getAllres();
+    //    for(Restaraunt u : reslist){
+    //     System.out.println(u);
+    //    }
+
     Restarauntdao rdao = new Restarauntdaoimpl();
-    int status = rdao.insertRestaraunt(res);
-    System.out.println(status+" rows updated succssfully");
+    // Restaraunt res1 = rdao.getResById(2);
+    // System.out.println(res1);
+
+    
+
+
+
+
+
 }
 }

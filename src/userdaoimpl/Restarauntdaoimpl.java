@@ -3,6 +3,8 @@ package userdaoimpl;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,13 +20,17 @@ public class Restarauntdaoimpl implements Restarauntdao {
     Restaraunt res;
      ArrayList<Restaraunt> reslist = new ArrayList<Restaraunt>();
      private PreparedStatement pstmt;
+     private Statement stmt;
+     private ResultSet resset;
      private static final String INSERT_RES = "insert into restaraunt(restaraunt_id,restaraunt_name,restaraunt_address,restaraunt_active) values(?,?,?,?)";
+     private static final String GET_ALL_RES = "select * from restaraunt";
+     private static final String GET_RES_BY_ID = "select * from restaraunt where restaraunt_id= ?";
     
 
 
      static{
         try{
-                 Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/food_delivery", "root", "root");
         }
         catch(Exception e){
@@ -51,6 +57,9 @@ public class Restarauntdaoimpl implements Restarauntdao {
     @Override
     public List<Restaraunt> getAllres() {
         try{
+                stmt = con.createStatement();
+                resset = stmt.executeQuery(GET_ALL_RES);
+                reslist = extractUserDatafromResultSet(resset);
 
         }
         catch(Exception e){
@@ -62,6 +71,11 @@ public class Restarauntdaoimpl implements Restarauntdao {
     @Override
     public Restaraunt getResById(int id) {
         try{
+                pstmt = con.prepareStatement(GET_RES_BY_ID);
+                pstmt.setInt(1,id);
+                resset = pstmt.executeQuery();
+                reslist = (ArrayList<Restaraunt>) extractUserDatafromResultSet(resset);
+                res = reslist.get(0);
 
         }
         catch(Exception e){
@@ -90,6 +104,18 @@ public class Restarauntdaoimpl implements Restarauntdao {
  
         }
         return x;
+    }
+
+    ArrayList<Restaraunt> extractUserDatafromResultSet(ResultSet resset){
+        try{
+            while(resset.next()){
+                reslist.add(new Restaraunt(resset.getInt(1),resset.getString(2),resset.getString(3),resset.getBoolean(4)));
+             }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return reslist;
     }
 
 }
