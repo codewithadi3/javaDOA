@@ -2,15 +2,18 @@ package Main;
 
 import java.util.ArrayList;
 
+import model.Restaraunt;
 import model.User;
+import userdaoimpl.Restarauntdaoimpl;
 import userdaoimpl.Userdaoimp;
 import useraod.Userdao;
+import useraod.Restarauntdao;
 
 public class Main {
 public static void main(String[] args) {
     // User u =  new User("Akhil","123","akil@gmail.com","btm","Customer");
 
-    Userdao udao = new Userdaoimp();
+    // Userdao udao = (Userdao) new Userdaoimp();
 
 
 //    int status =  udao.insertUser(u);
@@ -21,25 +24,21 @@ public static void main(String[] args) {
 //     System.out.println(u);
 //    }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 1d22541 (Initial commit)
+
     // User user = udao.getUserById(2);
     // System.out.println(user);
 //  int status = udao.deleteById(2);
 //  System.out.println(status+" rows got deleted");
 
-int status = udao.updateUserById(1,"amalapuram");
-System.out.println(status +"rows have been updated");
-<<<<<<< HEAD
-=======
-    User user = udao.getUserById(2);
-    System.out.println(user);
-    
->>>>>>> 92efae40d7ccc116fa05bc669084ac940765a1da
-=======
->>>>>>> 1d22541 (Initial commit)
+// int status = udao.updateUserById(1,"amalapuram");
+// System.out.println(status +"rows have been updated");
 
+    // User user = udao.getUserById(1);
+    // System.out.println(user);
+
+    Restaraunt res = new Restaraunt(1,"telugu inti ruchulu","amlapuram",true);
+    Restarauntdao rdao = new Restarauntdaoimpl();
+    int status = rdao.insertRestaraunt(res);
+    System.out.println(status+" rows updated succssfully");
 }
 }
