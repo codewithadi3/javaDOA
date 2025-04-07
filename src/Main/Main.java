@@ -61,5 +61,8 @@ public static void main(String[] args) {
 
 int status = rdao.updateResById(2,true);
 System.out.println(status +" rows has been updated");
+
+
+
 }
 }
