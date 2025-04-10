@@ -55,7 +55,7 @@ public static void main(String[] args) {
     //     System.out.println(u);
     //    }
 
-    // Restarauntdao rdao = new Restarauntdaoimpl();
+    Restarauntdao rdao = new Restarauntdaoimpl();
      // Restaraunt res1 = rdao.getResById(2);
      // System.out.println(res1);
 
@@ -80,6 +80,9 @@ System.out.println(menu);
 
 
 
+
+int status = rdao.updateResById(2,true);
+System.out.println(status +" rows has been updated");
 
 
 
