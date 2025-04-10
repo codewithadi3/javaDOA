@@ -92,7 +92,7 @@ public class Restarauntdaoimpl implements Restarauntdao {
                 pstmt = con.prepareStatement(DELETE_RES_BY_ID);
                 pstmt.setInt(1,id);
                 x = pstmt.executeUpdate();
-              
+                
         }
         catch(Exception e){
  
