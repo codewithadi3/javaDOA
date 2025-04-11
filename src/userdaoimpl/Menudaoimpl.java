@@ -24,6 +24,9 @@ public class Menudaoimpl implements Menudao {
      private static final String INSERT_INTO_MENU = "insert into menu(menu_id,res_id,itemname,description,price,isAvailable) values(?,?,?,?,?,?)";
      private static final String GET_ALL_MENUS = "select * from menu";
      private static final String GET_MENU_BY_ID = "select * from menu where menu_id= ?";
+     private static final String DELETE_MENU_BY_ID = "delete from menu where menu_id= ?";
+     private static final String UPDATE_MENU_BY_ID = "update menu set itemname =? where menu_id=?";
+
 static{
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -80,9 +83,11 @@ static{
     }
 
     @Override
-    public int deleteMenuById(int id) {
+    public int deleteMenuById(int menu_id) {
         try{
-
+                pstmt = con.prepareStatement(DELETE_MENU_BY_ID);
+                pstmt.setInt(1,menu_id);
+                x = pstmt.executeUpdate();
         }
         catch(Exception e){
             e.printStackTrace();
@@ -91,9 +96,12 @@ static{
     }
 
     @Override
-    public int updateMenuById(int id) {
+    public int updateMenuById(int menu_id,String itemname) {
         try{
-
+                    pstmt = con.prepareStatement(UPDATE_MENU_BY_ID);
+                    pstmt.setInt(2,menu_id);
+                    pstmt.setString(1,itemname);
+                    x = pstmt.executeUpdate();
         }
         catch(Exception e){
             e.printStackTrace();

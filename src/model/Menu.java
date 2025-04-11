@@ -55,7 +55,7 @@ public class Menu {
    }
    @Override
    public String toString() {
-    return menu_id + "     " + res_id + "     " + item_name + "     "
+    return  "\n "+  menu_id + "     " + res_id + "     " + item_name + "     "
             + description + "      " + price + "      " + isAvailable + "    ";
    }
    

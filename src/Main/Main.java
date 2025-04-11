@@ -55,7 +55,7 @@ public static void main(String[] args) {
     //     System.out.println(u);
     //    }
 
-    Restarauntdao rdao = new Restarauntdaoimpl();
+    // Restarauntdao rdao = new Restarauntdaoimpl();
      // Restaraunt res1 = rdao.getResById(2);
      // System.out.println(res1);
 
@@ -66,7 +66,7 @@ public static void main(String[] args) {
 // System.out.println(status +" rows has been updated");
 
 // Menu menu  = new Menu(11,1,"biriyani","best biriyani in the world",950.5f,true);
-Menudao  mdao = new Menudaoimpl();
+// Menudao  mdao = new Menudaoimpl();
 // int x = mdao.insertMenu(menu);
 // System.out.println(x+" rows updated");
 
@@ -74,15 +74,27 @@ Menudao  mdao = new Menudaoimpl();
 // for(Menu m : reslist){
 //     System.out.println(m);
 // }
-Menu menu;
-menu = mdao.getMenuById(12);
-System.out.println(menu);
+// Menu menu;
+// menu = mdao.getMenuById(12);
+// System.out.println(menu);
 
 
 
 
-int status = rdao.updateResById(2,true);
-System.out.println(status +" rows has been updated");
+// int status = rdao.updateResById(2,true);
+// System.out.println(status +" rows has been updated");
+
+
+// int x = mdao.deleteMenuById(12);
+// System.out.println(x+" rows has been deleted");
+
+// int x = mdao.updateMenuById(12,"raju gari kodi palav");
+// System.out.println(x+" rows has been updated for the requested item name");
+
+
+
+
+
 
 
 
