@@ -1,5 +1,4 @@
 package userdaoimpl;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -7,14 +6,10 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
 import model.Restaraunt;
-
 import useraod.Restarauntdao;
 
 public class Restarauntdaoimpl implements Restarauntdao {
-
-
     private static Connection con;
     int x =-1;
     Restaraunt res;
@@ -27,9 +22,6 @@ public class Restarauntdaoimpl implements Restarauntdao {
      private static final String GET_RES_BY_ID = "select * from restaraunt where restaraunt_id= ?";
      private static final String DELETE_RES_BY_ID = "delete from restaraunt where restaraunt_id= ?";
      private static final String UPDATE_RES_BY_ID = "update restaraunt set restaraunt_active = ? where restaraunt_id= ?";
-    
-
-
      static{
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
