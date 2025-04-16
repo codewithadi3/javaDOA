@@ -19,10 +19,6 @@ public class OrderHistorydaoimpl implements OrderHistorydao {
         "INSERT INTO order_history(orderhis_id, user_id, ord_id, total, order_status) VALUES (?, ?, ?, ?, ?)";
     private static final String UPDATE_ORDER_HISTORY_STATUS = 
         "UPDATE order_history SET order_status = ? WHERE orderhis_id = ?";
-    private static final String FETCH_ORDER_HISTORY_BY_ID = 
-        "SELECT * FROM order_history WHERE orderhis_id = ?";
-    private static final String DELETE_ORDER_HISTORY = 
-        "DELETE FROM order_history WHERE orderhis_id = ?";
 
     static {
         try {
